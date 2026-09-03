@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEUST LibConnect</title>
+  <link rel="stylesheet" href="NEUST LibConnect.css">
+</head>
+<body>
+
+  <!-- Hero Header Section -->
+  <header class="library-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="campus-badge">Gabaldon Campus & Main Network</span>
+      <h1>NEUST Online Library & Reference Hub</h1>
+      <p>Access thousands of digital reference modules, search the online research catalog, and connect with expert librarians in real time.</p>
+
+      <!-- Main Search Bar -->
+      <form class="search-box" id="searchForm" onsubmit="return false;">
+        <input type="text" id="searchInput" placeholder="Search books by title, author, or keyword..." required>
+        <button type="button" onclick="filterBooks()">Search Catalog</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Quick Access Services Section -->
+  <main class="services-container">
+    <div class="service-card">
+      <div class="card-icon">📚</div>
+      <h3>Online Research Catalog</h3>
+      <p>Browse physical and digital books, academic journals, and institutional research papers across all NEUST campuses.</p>
+      <a href="#book-catalog" class="card-link">Browse Catalog &rarr;</a>
+    </div>
+
+    <div class="service-card highlight">
+      <div class="card-icon">💬</div>
+      <h3>Ask-a-Librarian</h3>
+      <p>Need help with your thesis reference or literature review? Chat live with our campus library staff.</p>
+
+      <div class="online-status">
+        <span class="status-dot"></span>
+        <span>Librarian Online</span>
+      </div>
+
+      <a href="#" class="card-link btn-chat">Start Live Chat</a>
+    </div>
+
+    <div class="service-card">
+      <div class="card-icon">💻</div>
+      <h3>Digital Reference Modules</h3>
+      <p>Direct download access to open-source databases, e-books, course reading materials, and local journals.</p>
+      <a href="#book-catalog" class="card-link">Access Modules &rarr;</a>
+    </div>
+  </main>
+
+  <!-- NEW: Book Catalog Section -->
+  <section class="catalog-section" id="book-catalog">
+    <div class="section-header">
+      <h2>Available Books & Reference Materials</h2>
+      <p>Explore resources tailored for Gabaldon Campus programs and general research.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCategory('all')">All Material</button>
+      <button class="filter-btn" onclick="filterCategory('agriculture')">Agriculture & Agroforestry</button>
+      <button class="filter-btn" onclick="filterCategory('ict')">ICT & Web Development</button>
+      <button class="filter-btn" onclick="filterCategory('gen-ed')">General Education</button>
+    </div>
+
+    <!-- Book Grid Container -->
+    <div class="book-grid" id="bookGrid">
+
+      <!-- Book Item 1 -->
+      <div class="book-card" data-category="agriculture">
+        <div class="book-cover">
+          <span class="badge available">E-Book Available</span>
+          <div class="cover-placeholder">🌾</div>
+        </div>
+        <div class="book-details">
+          <span class="category-tag">Agriculture</span>
+          <h4 class="book-title">Sustainable Irrigation and Crop Water Management</h4>
+          <p class="book-author">By Dr. M. Santos (2024)</p>
+          <p class="book-desc">Comprehensive reference on modern farm water conservation and soil moisture techniques.</p>
+          <div class="book-actions">
+            <a href="#" class="btn-read">Read / Download PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book Item 2 -->
+      <div class="book-card" data-category="ict">
+        <div class="book-cover">
+          <span class="badge available">E-Book Available</span>
+          <div class="cover-placeholder">💻</div>
+        </div>
+        <div class="book-details">
+          <span class="category-tag">ICT & Development</span>
+          <h4 class="book-title">Modern Web Development with CSS Flexbox & Grid</h4>
+          <p class="book-author">By A. Reyes (2025)</p>
+          <p class="book-desc">A hands-on guide for building responsive user interfaces and modern layout architectures.</p>
+          <div class="book-actions">
+            <a href="#" class="btn-read">Read / Download PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book Item 3 -->
+      <div class="book-card" data-category="gen-ed">
+        <div class="book-cover">
+          <span class="badge borrowed">Physical Copy (In Library)</span>
+          <div class="cover-placeholder">📖</div>
+        </div>
+        <div class="book-details">
+          <span class="category-tag">General Education</span>
+          <h4 class="book-title">Language and the Internet</h4>
+          <p class="book-author">By David Crystal</p>
+          <p class="book-desc">Essential socio-linguistic analysis of internet slang, communication shifts, and digital discourse.</p>
+          <div class="book-actions">
+            <button class="btn-reserve" onclick="alert('Book reservation request sent to Gabaldon Campus Library!')">Reserve Book</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book Item 4 -->
+      <div class="book-card" data-category="agriculture">
+        <div class="book-cover">
+          <span class="badge available">E-Book Available</span>
+          <div class="cover-placeholder">🌱</div>
+        </div>
+        <div class="book-details">
+          <span class="category-tag">Agriculture</span>
+          <h4 class="book-title">Philippine Rice Farming & Soil Health Guide</h4>
+          <p class="book-author">PhilRice Research Series (2023)</p>
+
+          <p class="book-desc">Practical insights for lowland agricultural conditions and modern crop productivity.</p>
+          <div class="book-actions">
+            <a href="#" class="btn-read">Read / Download PDF</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Connect JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
